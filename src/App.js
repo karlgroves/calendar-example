@@ -1,10 +1,8 @@
-import logo from './logo.svg';
-import Calendar from './calendar';
+import logo from "./logo.svg";
+import Calendar from "./calendar";
 
 function App() {
-  return (
-    <Calendar />
-  );
+  return <Calendar />;
 }
 
 export default App;

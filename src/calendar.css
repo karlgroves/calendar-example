@@ -52,47 +52,52 @@
 .calendar-body {
   width: 100%;
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
 }
 
-.table-header {
-  height: 100px;
+.calendar-table {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
-.weekday {
-  width: 100px;
-  text-align: center;
-}
-
-.table-content {
-  width: 100%;
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.calendar-day {
-  width: 125px;
-  height: 75px;
-  position: relative;
+.calendar-table th,
+.calendar-table td {
   border: 1px solid #a6a6a6;
+  width: 14.28%; /* 7 columns, so each should take up 1/7th of the width */
+  height: 100px;
+  text-align: left;
+  vertical-align: top;
+  position: relative;
+  padding: 10px;
 }
 
-.calendar-day:hover {
-  background-color: rgba(0,0,0,.10);
+.calendar-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
 }
 
-.calendar-day p {
+.calendar-table td {
+  cursor: pointer;
+}
+
+.calendar-table td:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dayNumber {
   position: absolute;
-  right: 10px;
+  top: 5px;
+  left: 5px;
+  font-size: 1.2rem;
   color: #a6a6a6;
+}
+
+.eventName {
+  margin-top: 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0056b3;
 }
 
 .current p {
